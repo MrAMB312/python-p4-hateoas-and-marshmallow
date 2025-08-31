@@ -115,7 +115,7 @@ class NewsletterByID(Resource):
 
         newsletter = Newsletter.query.filter_by(id=id).first()
         for attr in request.form:
-            setattr(record, attr, request.form[attr])
+            setattr(newsletter, attr, request.form[attr])
 
         db.session.add(newsletter)
         db.session.commit()
